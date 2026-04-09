@@ -1,0 +1,12 @@
+{
+  "name": "rl-rollout-checkpoints",
+  "version": "0.1.0",
+  "description": "Optional manifests for offline RL datasets produced by this pipeline.",
+  "sources": [
+    {
+      "id": "transitions-topic",
+      "kind": "topic-export",
+      "note": "Subscribe to rl/transitions and persist to Parquet in a real system."
+    }
+  ]
+}
