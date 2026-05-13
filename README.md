@@ -37,6 +37,7 @@ flowchart LR
 - [Quick start](#quick-start)
 - [License](#license)
 - [🗺️ Repository map](#️-repository-map)
+- [📊 Code composition](#-code-composition)
 
 ## Rollout sequence
 
@@ -132,4 +133,18 @@ mindmap
       README_2.md
       README.md
       pyproject.toml
+```
+
+
+## 📊 Code composition
+
+File-type breakdown of source under this repo (skips `.git`, `node_modules`, build caches, lockfiles).
+
+```mermaid
+pie showData title File-type composition of reinforcement-learning-pipeline (18 files)
+    "Python" : 13
+    "Markdown" : 2
+    "Other" : 1
+    "TOML" : 1
+    "JSON" : 1
 ```
