@@ -36,6 +36,7 @@ flowchart LR
 - [Rollout sequence](#rollout-sequence)
 - [Quick start](#quick-start)
 - [License](#license)
+- [🗺️ Repository map](#️-repository-map)
 
 ## Rollout sequence
 
@@ -111,3 +112,24 @@ pytest
 ## License
 
 MIT
+
+
+## 🗺️ Repository map
+
+Top-level layout of `reinforcement-learning-pipeline` rendered as a Mermaid mindmap (auto-generated from the on-disk tree).
+
+```mermaid
+mindmap
+  root((reinforcement-learning-pipeline))
+    datasets/
+      manifest.json
+    src/
+      rl_pipeline
+    tests/
+      test_episode_pipeline.py
+    files
+      LICENSE
+      README_2.md
+      README.md
+      pyproject.toml
+```
