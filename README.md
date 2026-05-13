@@ -33,8 +33,35 @@ flowchart LR
 
 - [Layout](#layout)
 - [Architecture at a glance](#architecture-at-a-glance)
+- [Rollout sequence](#rollout-sequence)
 - [Quick start](#quick-start)
 - [License](#license)
+
+## Rollout sequence
+
+```mermaid
+sequenceDiagram
+    participant R as pipeline.runner
+    participant E as tiny_grid env
+    participant P as episode publisher
+    participant B as InMemoryBus
+    participant L as transition_log
+    participant RB as replay buffer
+
+    R->>L: subscribe(B, topic="transition")
+    R->>RB: subscribe(B, topic="transition")
+    R->>E: reset()
+    E-->>R: state s0
+    loop until done
+        R->>P: act(s_t) -> a_t
+        P->>E: step(a_t)
+        E-->>P: (s_{t+1}, r, done)
+        P->>B: publish(Transition{s, a, r, s'})
+        B->>L: deliver
+        B->>RB: deliver
+    end
+    R->>B: close()
+```
 
 ## Layout
 
